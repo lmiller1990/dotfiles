@@ -1,3 +1,9 @@
+autoload -U compinit && compinit
+zmodload -i zsh/complist
+
+fpath=(/usr/local/share/zsh-completions $fpath)
+# chmod go-w '/usr/local/share'
+
 # useful git aliases
 alias gb='git branch '
 alias g='git '
@@ -6,7 +12,7 @@ alias gco='git checkout '
 alias gcmsg='git commit -m '
 
 # git completions
-source ~/.zsh/git-completion.sh
+# First need bash git completions, install with `brew install bash-completion`
 
 # node stuff
 alias y='yarn'
@@ -36,3 +42,4 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+
