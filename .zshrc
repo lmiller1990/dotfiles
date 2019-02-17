@@ -1,8 +1,31 @@
+setopt PROMPT_SUBST
+
+parse_git_branch() {
+  git_status="$(git status 2> /dev/null)"
+  pattern="On branch ([^[:space:]]*)"
+  if [[ ! ${git_status} =~ "(working (tree|directory) clean)" ]]; then
+    state="*"
+  fi
+
+  if [[ ${git_status} =~ ${pattern} ]]; then
+    branch=${match[1]}
+    branch_cut=${branch:0:20}
+    echo "(${branch}${state}) "
+  fi
+}
+
+PROMPT='$(parse_git_branch)$ '
+
+
+
+
+
+
+# Completions
 autoload -U compinit && compinit
 zmodload -i zsh/complist
 
 fpath=(/usr/local/share/zsh-completions $fpath)
-# chmod go-w '/usr/local/share'
 
 # useful git aliases
 alias gb='git branch '
@@ -10,9 +33,6 @@ alias g='git '
 alias gst='git status'
 alias gco='git checkout '
 alias gcmsg='git commit -m '
-
-# git completions
-# First need bash git completions, install with `brew install bash-completion`
 
 # node stuff
 alias y='yarn'
@@ -23,6 +43,9 @@ alias y-t-all='yarn test --watchAll=false'
 # better history
 alias history='history 0'
 alias h='history | grep'
+
+# rbenv
+eval "$(rbenv init -)"
 
 # Eternal history
 # taken from https://unix.stackexchange.com/questions/273861/unlimited-history-in-zsh
