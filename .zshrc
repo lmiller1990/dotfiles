@@ -45,7 +45,9 @@ alias history='history 0'
 alias h='history | grep'
 
 # rbenv
-eval "$(rbenv init -)"
+if hash rbenv 2>/dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 # Eternal history
 # taken from https://unix.stackexchange.com/questions/273861/unlimited-history-in-zsh
