@@ -96,8 +96,8 @@ set nowritebackup
 " rerun last terminal command using ,r
 nnoremap <leader>r :!!<CR>
 
-" Use .js highlighting in .jsx
-let g:jsx_ext_required = 0
-
 " match do/end in ruby
 runtime macros/matchit.vim
+
+" Colorscheme
+colorscheme space_vim_theme
