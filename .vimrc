@@ -6,7 +6,8 @@
 " - ctrlp for fuzzy file finding 
 " - nerdtree for tree viewer
 " - surround.vim 
-" - emmit.vim
+" - emmet.vim
+" - plus some lang. specifics
 "
 " I am using pathogen.vim to manage plugins.
 " Install pathogen by running:
@@ -31,7 +32,7 @@ syntax on
 set backspace=indent,eol,start
 
 " reduce escape sequence timeout length to 100ms
-set ttimeoutlen=100
+set ttimeoutlen=10
 
 " indent settings
 filetype plugin indent on
@@ -104,9 +105,7 @@ nnoremap <leader>r :!!<CR>
 runtime macros/matchit.vim
 
 " Colorscheme
-" colorscheme pablo 
 set t_md=
 
 " ush zsh
 set shell=/usr/local/bin/zsh
-
