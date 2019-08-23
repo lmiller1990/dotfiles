@@ -46,6 +46,10 @@ filetype plugin indent on
 nnoremap j gj
 nnoremap k gk
 
+" move panes with space h/j/k/l
+nnoremap <space> <C-w>
+nnoremap <space>p :CtrlP<cr>
+
 " better autocomplete with tab
 function! Tab_Or_Complete()
   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
@@ -100,4 +104,9 @@ nnoremap <leader>r :!!<CR>
 runtime macros/matchit.vim
 
 " Colorscheme
-colorscheme space_vim_theme
+" colorscheme pablo 
+set t_md=
+
+" ush zsh
+set shell=/usr/local/bin/zsh
+
