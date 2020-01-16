@@ -16,11 +16,6 @@ parse_git_branch() {
 
 PROMPT='$(parse_git_branch)$ '
 
-
-
-
-
-
 # Completions
 autoload -U compinit && compinit
 zmodload -i zsh/complist
@@ -43,6 +38,10 @@ alias y-t-all='yarn test --watchAll=false'
 # better history
 alias history='history 0'
 alias h='history | grep'
+
+# misc
+alias c='clear'
+alias down='docker-compose down'
 
 # rbenv
 if hash rbenv 2>/dev/null; then
@@ -68,3 +67,8 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
+# workplace specific
+alias run_doseme="cd && cd doseme/doseme-www/DoseMe && CATALYST_DEBUG=1 perl script/doseme_server.pl -r -p 4000"
+alias run_sof="cd && cd doseme/smart-on-fhir-www && code . && yarn start"
+alias s="sqitch"
+alias "docker con"="docker container"

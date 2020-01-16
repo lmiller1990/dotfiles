@@ -105,7 +105,9 @@ nnoremap <leader>r :!!<CR>
 runtime macros/matchit.vim
 
 " Colorscheme
-set t_md=
+colorscheme onehalfdark
 
 " ush zsh
 set shell=/usr/local/bin/zsh
+
+set termguicolors     " enable true colors support
