@@ -1,5 +1,5 @@
 " ---------------------------------
-" This is Lachlan Millers vimrc
+" This is Lachlan Miller's vimrc
 " ---------------------------------
 " I am using the following plugins:
 " ---------------------------------
@@ -7,7 +7,6 @@
 " - nerdtree for tree viewer
 " - surround.vim 
 " - emmet.vim
-" - plus some lang. specifics
 "
 " I am using pathogen.vim to manage plugins.
 " Install pathogen by running:
@@ -15,7 +14,7 @@
 " mkdir -p ~/.vim/autoload ~/.vim/bundle &&  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 "
 " Now install the plugins using by running:
-" cd ~/.vim/bundle && git clone git://github.com/tpope/vim-surround.git && git clone https://github.com/scrooloose/nerdtree.git && git clone && https://github.com/ctrlpvim/ctrlp.vim && git clone https://github.com/mattn/emmet-vim.git
+" cd ~/.vim/bundle && git clone git://github.com/tpope/vim-surround.git && git clone https://github.com/scrooloose/nerdtree.git && git clone && git clone https://github.com/ctrlpvim/ctrlp.vim && git clone https://github.com/mattn/emmet-vim.git
 "
 " And you should be good to go!
 
@@ -83,31 +82,16 @@ endif
 " do not limit amount of files shown
 let g:ctrlp_max_files=0
 
-" forgot what this does...
+" forgot forgot what this does, but I need it
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " open nerd tree with ctrl + n
 map <C-n> :NERDTreeToggle<CR>
 
-" .swp files are annoying
-" put them somewhere out of the way
-" copy pasted this, not really sure if it is all necessary
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set backupskip=/tmp/*,/private/tmp/*
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set nowritebackup
-
 " rerun last terminal command using ,r
 nnoremap <leader>r :!!<CR>
 
-" match do/end in ruby
-runtime macros/matchit.vim
-
 " Colorscheme
 colorscheme onehalfdark
-
-" ush zsh
-set shell=/usr/local/bin/zsh
 
 set termguicolors     " enable true colors support
